@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - VJTI e-Library</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .about-section, .history-section, .stats {
+      padding: 40px 60px;
+      background-color: #f0f8ff;
+      text-align: center;
+    }
+
+    .about-section h1,
+    .history-section h2,
+    .stats h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .about-section p, .history-section p {
+      font-size: 18px;
+      max-width: 900px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      background: #e6f2ff;
+    }
+
+    .stat-box {
+      padding: 20px;
+    }
+
+    .stat-box h3 {
+      font-size: 36px;
+      color: #003366;
+    }
+
+    .stat-box p {
+      font-size: 18px;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+
+ <header>
+    <div class="logo-container">
+      <img src="https://vjti.ac.in/wp-content/uploads/2024/05/logo-light.gif" alt="Additional Logo" class="logo logo-left" />
+      <img src="logo.png" alt="VJTI Logo" class="logo logo-right" />
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li> <!-- Added Home -->
+        <li class="dropdown">
+          <a href="#">About</a>
+          <ul class="dropdown-menu">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="t&c.pdf">Terms and Conditions</a></li>
+            <li><a href="https://vjti.ac.in/library/">Facilities</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Resources</a>
+          <ul class="dropdown-menu">
+            <li><a href="https://vjti.ac.in/library-e-resources/">E-Resources</a></li>
+            <li><a href="https://nptel.ac.in/">Video References</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Books</a>
+          <ul class="dropdown-menu">
+            <li><a href="books.html">E Books</a></li>
+            <li><a href="https://books.google.co.in/">Reference Books</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">PYQs</a>
+          <ul class="dropdown-menu">
+            <li><a href="pyqs.html">Question Papers</a></li>
+            <li><a href="solutions.html">Solutions</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Contact</a>
+          <ul class="dropdown-menu">
+            <li><a href="help.html">Help</a></li>
+            <li><a href="https://maps.app.goo.gl/ugCPQYuiCkmnEhNB6">Location</a></li>
+          </ul>
+        </li>
+                  <a href="login.html">Login</a>
+          
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+
+
+<!-- About Us Section -->
+<section class="about-section">
+  <h1>About the VJTI e-Library</h1>
+  <p>
+    The VJTI e-Library is a digital initiative designed to empower students, faculty, and researchers with seamless access to academic resources anytime, anywhere. 
+    As one of Mumbai's most prestigious institutes, VJTI has always aimed to blend traditional values with modern technological advancements. 
+    Our e-library platform is a testament to that vision, offering e-books, previous year question papers, syllabi, lab manuals, and reference materials all under one roof.
+    With an intuitive interface and regularly updated content, the e-library ensures that users have access to the most relevant and up-to-date information.
+    Whether you're preparing for exams, conducting research, or just exploring new domains, the VJTI e-Library is your academic companion—efficient, accessible, and always evolving.
+  </p>
+</section>
+
+<!-- History Section -->
+<section class="history-section">
+  <h2>History</h2>
+  <p>
+    The concept of a digital e-library at VJTI took shape in 2024 during the post-pandemic academic transition. 
+    With increased reliance on virtual education, a need was felt for a centralized knowledge hub that could transcend physical barriers. 
+    Spearheaded by dedicated faculty and tech-savvy students, the e-library project began as a campus-wide collaboration. 
+    It has since grown into a full-fledged academic repository, becoming an indispensable resource for thousands of users across departments.
+  </p>
+</section>
+
+<!-- Stats Section with JS -->
+<section class="stats">
+  <div class="stat-box">
+    <h3 id="books">0</h3>
+    <p>Books Available</p>
+  </div>
+  <div class="stat-box">
+    <h3 id="users">0</h3>
+    <p>Registered Users</p>
+  </div>
+  <div class="stat-box">
+    <h3 id="downloads">0</h3>
+    <p>Downloads</p>
+  </div>
+  <div class="stat-box">
+    <h3 id="subjects">0</h3>
+    <p>Subjects Covered</p>
+  </div>
+</section>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-contact-logo">
+        <img src="logo.png" alt="VJTI Logo" class="footer-logo" />
+        <div class="contact-info">
+          <h4>Contact Us</h4>
+          <address>
+            <p><strong>Chief Library Officer</strong></p>
+            <p>Central Library</p>
+            <p>VJTI Mumbai,</p>
+            <p>H R Mahajani Marg, Matunga,</p>
+            <p>Mumbai, Maharashtra 400019 (India)</p>
+            <br>
+            <p>Phone: (022) 24198121</p>
+            <p>Email: librarian@vjti.ac.in</p>
+          </address>
+        </div>
+      </div>
+
+      <div>
+        <h4>About Library</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="https://vjti.ac.in/library/">Facilities</a></li>
+          <li><a href="https://maps.app.goo.gl/ugCPQYuiCkmnEhNB6">Location</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="books.html">E-Books</a></li>
+          <li><a href="https://www.onos.gov.in/">Journals</a></li>
+          <li><a href="https://scholar.google.com/">Research Papers</a></li>
+        </ul>
+      </div>
+
+      <!-- ✅ Centered Last Two Columns -->
+      <div class="footer-center">
+        <h4>Services</h4>
+        <ul>
+          <li>Room Booking</a></li>
+          <li>Printing</a></li>
+          <li>Help Desk</a></li>
+        </ul>
+      </div>
+      <div class="footer-center">
+        <h4>Working Hours</h4>
+        <ul>
+          <li>Mon - Fri: 8:00 AM - 8:00 PM</li>
+          <li>Sat: 9:00 AM - 5:00 PM</li>
+          <li>Sun: Closed</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Veermata Jijabai Technological Institute E-Library. All rights reserved.</p>
+      <p>Developed by VJTI CE Students under Capstone Project Evaluation.</p>
+    </div>
+  </footer>
+
+
+<!-- JS for animated counters -->
+<script>
+  function animateCounter(id, endValue, duration) {
+    const element = document.getElementById(id);
+    let startValue = 0;
+    const increment = endValue / (duration / 50);
+
+    const counter = setInterval(() => {
+      startValue += increment;
+      if (startValue >= endValue) {
+        element.textContent = endValue;
+        clearInterval(counter);
+      } else {
+        element.textContent = Math.floor(startValue);
+      }
+    }, 50);
+  }
+
+  window.onload = () => {
+    animateCounter('books', 1200, 2000);
+    animateCounter('users', 800, 2000);
+    animateCounter('downloads', 5000, 2000);
+    animateCounter('subjects', 42, 2000);
+  };
+</script>
+
+</body>
+</html>

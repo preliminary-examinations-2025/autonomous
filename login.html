@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | VJTI e-Library</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Additional login tab styles */
+    .login-main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
+      background-color: #f5f5f5;
+      min-height: 80vh;
+      flex-direction: column;
+    }
+
+    .login-tabs {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .login-tabs button {
+      padding: 10px 20px;
+      border: none;
+      border-bottom: 3px solid transparent;
+      background-color: transparent;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .login-tabs button.active {
+      border-bottom: 3px solid #004080;
+      color: #004080;
+    }
+
+    .login-box {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+      display: none;
+    }
+
+    .login-box.active {
+      display: block;
+    }
+
+    .login-box h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .login-box label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .login-box button[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      background-color: #004080;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .login-box button[type="submit"]:hover {
+      background-color: #002f5f;
+    }
+
+    .login-note {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 0.9em;
+    }
+
+    /* Registration box */
+    .register-box {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+      display: none;
+    }
+
+    .register-box.active {
+      display: block;
+    }
+
+    .register-box h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .register-box label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    .register-box input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .register-box button[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      background-color: #004080;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .register-box button[type="submit"]:hover {
+      background-color: #002f5f;
+    }
+
+    .register-note {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+
+   <header>
+    <div class="logo-container">
+      <img src="https://vjti.ac.in/wp-content/uploads/2024/05/logo-light.gif" alt="Additional Logo" class="logo logo-left" />
+      <img src="logo.png" alt="VJTI Logo" class="logo logo-right" />
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li> <!-- Added Home -->
+        <li class="dropdown">
+          <a href="#">About</a>
+          <ul class="dropdown-menu">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="t&c.pdf">Terms and Conditions</a></li>
+            <li><a href="https://vjti.ac.in/library/">Facilities</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Resources</a>
+          <ul class="dropdown-menu">
+            <li><a href="https://vjti.ac.in/library-e-resources/">E-Resources</a></li>
+            <li><a href="https://nptel.ac.in/">Video References</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Books</a>
+          <ul class="dropdown-menu">
+            <li><a href="books.html">E Books</a></li>
+            <li><a href="https://books.google.co.in/">Reference Books</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">PYQs</a>
+          <ul class="dropdown-menu">
+            <li><a href="pyqs.html">Question Papers</a></li>
+            <li><a href="solutions.html">Solutions</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Contact</a>
+          <ul class="dropdown-menu">
+            <li><a href="help.html">Help</a></li>
+            <li><a href="https://maps.app.goo.gl/ugCPQYuiCkmnEhNB6">Location</a></li>
+          </ul>
+        </li>
+                  <a href="login.html">Login</a>
+          
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+
+
+
+  <!-- Main login content -->
+  <main class="login-main">
+    <div class="login-tabs">
+      <button class="tab-button active" onclick="showForm('login')">Login</button>
+      <button class="tab-button" onclick="showForm('register')">Register</button>
+    </div>
+
+    <!-- Login Form -->
+    <div class="login-box active" id="login">
+      <h2>Login</h2>
+      <form action="dashboard.html" method="POST">
+        <label for="login-email">VJTI Email ID</label>
+        <input type="email" id="login-email" name="login-email" placeholder="example@vjti.ac.in" required />
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" name="login-password" required />
+        <button type="submit">Login</button>
+        <p class="login-note">Having trouble? <a href="#">Contact support</a>.</p>
+      </form>
+    </div>
+
+    <!-- Registration Form -->
+    <div class="register-box" id="register">
+      <h2>Register</h2>
+      <form action="registration-success.html" method="POST">
+        <label for="register-email">VJTI Email ID</label>
+        <input type="email" id="register-email" name="register-email" placeholder="example@vjti.ac.in" required />
+        <label for="register-password">Password</label>
+        <input type="password" id="register-password" name="register-password" required />
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" name="confirm-password" required />
+        <button type="submit">Register</button>
+        <p class="register-note">Already have an account? <a href="#" onclick="showForm('login')">Login</a>.</p>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-contact-logo">
+        <img src="logo.png" alt="VJTI Logo" class="footer-logo" />
+        <div class="contact-info">
+          <h4>Contact Us</h4>
+          <address>
+            <p><strong>Chief Library Officer</strong></p>
+            <p>Central Library</p>
+            <p>VJTI Mumbai,</p>
+            <p>H R Mahajani Marg, Matunga,</p>
+            <p>Mumbai, Maharashtra 400019 (India)</p>
+            <br>
+            <p>Phone: (022) 24198121</p>
+            <p>Email: librarian@vjti.ac.in</p>
+          </address>
+        </div>
+      </div>
+
+      <div>
+        <h4>About Library</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="https://vjti.ac.in/library/">Facilities</a></li>
+          <li><a href="https://maps.app.goo.gl/ugCPQYuiCkmnEhNB6">Location</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="books.html">E-Books</a></li>
+          <li><a href="https://www.onos.gov.in/">Journals</a></li>
+          <li><a href="https://scholar.google.com/">Research Papers</a></li>
+        </ul>
+      </div>
+
+      <!-- ✅ Centered Last Two Columns -->
+      <div class="footer-center">
+        <h4>Services</h4>
+        <ul>
+          <li>Room Booking</a></li>
+          <li>Printing</a></li>
+          <li>Help Desk</a></li>
+        </ul>
+      </div>
+      <div class="footer-center">
+        <h4>Working Hours</h4>
+        <ul>
+          <li>Mon - Fri: 8:00 AM - 8:00 PM</li>
+          <li>Sat: 9:00 AM - 5:00 PM</li>
+          <li>Sun: Closed</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Veermata Jijabai Technological Institute E-Library. All rights reserved.</p>
+      <p>Developed by VJTI CE Students under Capstone Project Evaluation.</p>
+    </div>
+  </footer>
+
+
+  <!-- Script for switching login tabs -->
+  <script>
+    function showForm(type) {
+      const tabs = document.querySelectorAll('.tab-button');
+      const boxes = document.querySelectorAll('.login-box, .register-box');
+
+      tabs.forEach(tab => tab.classList.remove('active'));
+      boxes.forEach(box => box.classList.remove('active'));
+
+      document.querySelector(`.tab-button[onclick="showForm('${type}')"]`).classList.add('active');
+      document.getElementById(type).classList.add('active');
+
+      const password = document.getElementById('register-password').value;
+      const confirm = document.getElementById('confirm-password').value;
+      if (password !== confirm) {
+         alert("Passwords do not match!");
+          return false;
+      }
+
+    }
+  </script>
+</body>
+</html>
