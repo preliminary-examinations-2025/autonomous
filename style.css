@@ -1,3 +1,10 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
@@ -53,7 +60,6 @@ header {
 .logo-container img {
   vertical-align: middle;
 }
-
 
 /* Navigation Styles */
 .nav-links {
@@ -121,6 +127,7 @@ header {
 .nav-links .dropdown-menu li a {
   font-size: 1rem;
 }
+
 .latest-news-bar {
   display: flex;
   align-items: center;
