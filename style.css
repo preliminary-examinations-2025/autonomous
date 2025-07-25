@@ -24,41 +24,22 @@ header {
   justify-content: space-between;
 }
 
-/* Logo container spacing */
 .logo-container {
   display: flex;
   align-items: center;
   gap: 20px;
+  flex: 1;
 }
 
-/* General logo sizing */
 .logo {
   height: 60px;
-  background-color: transparent;
 }
 
-/* Specific spacing for each logo */
-.logo-left {
-  margin-right: 10px;
-}
-
-.logo-right {
-  margin-left: 10px;
-}
-
-/* Style the PE logo for better blending */
-.logo[src*="logo_p.png"] {
-  background-color: transparent;
-  padding: 5px;
-  height: 55px;
-  border-radius: 10px;
-  box-shadow: 0 0 5px rgba(255,255,255,0.1);
-  margin-left: 25px; /* move it further to the right */
-}
-
-/* Optional: match logo alignment vertically */
-.logo-container img {
-  vertical-align: middle;
+.menu-icon {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
 }
 
 /* Navigation Styles */
@@ -127,6 +108,53 @@ header {
 .nav-links .dropdown-menu li a {
   font-size: 1rem;
 }
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .logo-container {
+    justify-content: space-between;
+  }
+
+  .news-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .news-label {
+    font-weight: bold;
+    color: #002147;
+    white-space: nowrap;
+  }
+
+  .news-container marquee {
+    flex: 1;
+    color: #002147;
+    font-weight: 500;
+  }
+}
+
 
 .latest-news-bar {
   display: flex;
