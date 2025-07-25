@@ -4,184 +4,198 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Preliminary Examinations 2025</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f4f7fa;
+    }
+
+    header {
+      background-color: #0d2c54;
+      padding: 10px 20px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+      flex: 1;
+    }
+
+    nav {
+      flex: 2;
+      display: flex;
+      justify-content: flex-end;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 10px;
+    }
+
+    nav a:hover {
+      background-color: #003366;
+      border-radius: 5px;
+    }
+
+    .marquee {
+      background-color: white;
+      border-top: 2px solid #002147;
+      border-bottom: 2px solid #002147;
+      padding: 8px 15px;
+      font-size: 16px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+    }
+
+    .marquee span {
+      color: red;
+      margin-right: 10px;
+      flex-shrink: 0;
+    }
+
+    section {
+      padding: 2rem;
+    }
+
+    .card {
+      background-color: #ffffff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      margin: 1rem 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+
+    th, td {
+      padding: 0.75rem;
+      text-align: left;
+    }
+
+    th {
+      background-color: #00509e;
+      color: white;
+    }
+
+    a {
+      color: #003366;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #c10000;
+      text-decoration: underline;
+    }
+
+    footer {
+      background-color: #072f5f;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-end;
+        width: 100%;
+      }
+
+      nav a {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        text-align: right;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+      }
+    }
+  </style>
 </head>
 <body>
-
-  <!-- Header -->
   <header>
-    <div class="logo-container">
-      <img src="https://vjti.ac.in/wp-content/uploads/2024/05/logo-light.gif" alt="Additional Logo" class="logo logo-left" />
-      <img src="logo.png" alt="VJTI Logo" class="logo logo-center" />
-      <img src="logo_p.png" alt="PE 2025" class="logo logo-right" />
-    </div>
-    <div class="menu-icon" id="menu-toggle" onclick="toggleMenu()">&#9776;</div>
-    <nav id="nav-menu" class="nav-links">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li class="dropdown">
-          <a href="#">About</a>
-          <ul class="dropdown-menu">
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="t&c.pdf">Terms and Conditions</a></li>
-            <li><a href="https://vjti.ac.in/library/">Facilities</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#">Resources</a>
-          <ul class="dropdown-menu">
-            <li><a href="https://vjti.ac.in/library-e-resources/">E-Resources</a></li>
-            <li><a href="https://nptel.ac.in/">Video References</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#">Books</a>
-          <ul class="dropdown-menu">
-            <li><a href="books.html">E Books</a></li>
-            <li><a href="https://books.google.co.in/">Reference Books</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#">PYQs</a>
-          <ul class="dropdown-menu">
-            <li><a href="pyqs.html">Question Papers</a></li>
-            <li><a href="solutions.html">Solutions</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#">Contact</a>
-          <ul class="dropdown-menu">
-            <li><a href="help.html">Help</a></li>
-            <li><a href="https://maps.app.goo.gl/ugCPQYuiCkmnEhNB6">Location</a></li>
-          </ul>
-        </li>
-        <a href="login.html">Login</a>
-      </ul>
+    <div class="logo">Preliminary Examinations 2025</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Test</a>
+      <a href="#">Register</a>
+      <a href="#">Results</a>
     </nav>
   </header>
 
-  <!-- Latest News Section -->
-  <div class="news-container">
-    <span class="news-label">📢 Important:</span>
-    <marquee behavior="scroll" direction="left" scrollamount="6" onmouseover="this.stop();" onmouseout="this.start();">
-      <a href="https://vjti.ac.in/admissions/" target="_blank">The Course Registrations for Semester I of 2026 Higher Secondary School Certificate Examination will start from July 27, 2025.</a>
-    </marquee>
+  <div class="marquee">
+    <span>Important:</span>
+    <marquee behavior="scroll" direction="left">Mid-Sem Exams begin from 5th Sept | New Books available in the Digital Library | Check E-Library section for updates</marquee>
   </div>
 
-  <!-- Welcome Section -->
-  <section class="welcome-section">
-    <div class="welcome-text">
-      <h1 align="center">Welcome to VJTI E-Library by <i>Preliminary Examinations 2025</i></h1>
-      <p>While students are expected to procure some of their course materials independently, VJTI offers a wide array of specialized resources to complement their studies and enrich their academic journey.</p>
-      <p>The VJTI Library stands as a pivotal resource hub, providing essential information support throughout your academic pursuits. Our knowledgeable library staff are available to assist you from your initial days on campus to the completion of your project, dissertation work, and preparation for your future career.</p>
-      <p>Since, this website is still in the developing stage, our technical team has confined ourselves to develop this e-library facility for the youngest branches of VJTI i.e. Computer Engineering and Information Technology. In the upcoming months, we'll extend this facility to all the branches of VJTI.</p>
-      <a href="https://vjti.ac.in/library/" target="_blank">
-        <button>Read more</button>
-      </a>
-    </div>
-    <div class="welcome-img">
-      <img src="lib.png" alt="VJTI Library" />
+  <section>
+    <h2>About This Website</h2>
+    <div class="card">
+      <p>This portal is designed to streamline the examination process for Preliminary Examinations 2025. It features an online registration system, test management interface, result publication, official notices, and access to the e-library resources.</p>
     </div>
   </section>
 
-  <!-- Resources Section -->
-  <section class="resources-section">
-    <h2>E-Library Resources</h2>
-    <div class="resource-grid">
-      <div class="resource-card">
-        <img src="https://img.icons8.com/ios-filled/100/book.png" alt="E-Books" />
-        <h3>E-Books</h3>
-        <p>Access a wide range of textbooks and reference books across all disciplines.</p>
-        <a href="books.html">Explore →</a>
-      </div>
-      <div class="resource-card">
-        <img src="https://img.icons8.com/ios-filled/100/microphone.png" alt="Audiobooks" />
-        <h3>Audiobooks</h3>
-        <p>Listen to educational and inspirational audiobooks on the go.</p>
-        <a href="https://www.audible.in/cat/Education-Learning-Audiobooks/21881798031">Listen →</a>
-      </div>
-      <div class="resource-card">
-        <img src="journal.png" alt="Journals" />
-        <h3>Journals</h3>
-        <p>Browse scientific journals and periodicals for research and study.</p>
-        <a href="https://www.onos.gov.in/">Read →</a>
-      </div>
-      <div class="resource-card">
-        <img src="https://img.icons8.com/ios-filled/100/questions.png" alt="Previous Year Questions" />
-        <h3>PYQs</h3>
-        <p>Access previous years’ university question papers sorted by branch and subject.</p>
-        <a href="pyqs.html">Download →</a>
-      </div>
+  <section>
+    <h2>Official Notices</h2>
+    <div class="card">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Notice</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2025-07-25</td>
+            <td>Mid-Sem Exams begin from 5th Sept 2025</td>
+          </tr>
+          <tr>
+            <td>2025-07-20</td>
+            <td>New books added to the e-library portal</td>
+          </tr>
+          <tr>
+            <td>2025-07-15</td>
+            <td>Registration opens for Preliminary Examinations 2025</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </section>
 
-  <!-- Footer -->
+  <section>
+    <h2>E-Library</h2>
+    <div class="card">
+      <ul>
+        <li><a href="#">Download Engineering Math I</a></li>
+        <li><a href="#">View Digital Logic Notes</a></li>
+        <li><a href="#">Access Programming Fundamentals</a></li>
+      </ul>
+    </div>
+  </section>
+
   <footer>
-    <div class="footer-container">
-      <div class="footer-contact-logo">
-        <img src="logo.png" alt="VJTI Logo" class="footer-logo" />
-        <div class="contact-info">
-          <h4>Contact Us</h4>
-          <address>
-            <p><strong>Chief Library Officer</strong></p>
-            <p>Central Library</p>
-            <p>VJTI Mumbai,</p>
-            <p>H R Mahajani Marg, Matunga,</p>
-            <p>Mumbai, Maharashtra 400019 (India)</p>
-            <br>
-            <p>Phone: (022) 24198121</p>
-            <p>Email: librarian@vjti.ac.in</p>
-          </address>
-        </div>
-      </div>
-      <div>
-        <h4>About Library</h4>
-        <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="https://vjti.ac.in/library/">Facilities</a></li>
-          <li><a href="https://maps.app.goo.gl/ugCPQYuiCkmnEhNB6">Location</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Resources</h4>
-        <ul>
-          <li><a href="books.html">E-Books</a></li>
-          <li><a href="https://www.onos.gov.in/">Journals</a></li>
-          <li><a href="https://scholar.google.com/">Research Papers</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-center">
-        <h4>Services</h4>
-        <ul>
-          <li>Room Booking</li>
-          <li>Printing</li>
-          <li>Help Desk</li>
-        </ul>
-      </div>
-      <div class="footer-center">
-        <h4>Working Hours</h4>
-        <ul>
-          <li>Mon - Fri: 8:00 AM - 8:00 PM</li>
-          <li>Sat: 9:00 AM - 5:00 PM</li>
-          <li>Sun: Closed</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <p>&copy; 2025 Veermata Jijabai Technological Institute E-Library. All rights reserved.</p>
-      <p>Developed by VJTI CE Students under Capstone Project Evaluation.</p>
-    </div>
+    <p>&copy; 2025 Preliminary Examinations. All Rights Reserved.</p>
   </footer>
-
-  <!-- Script to toggle the menu visibility -->
-  <script>
-    function toggleMenu() {
-      var menu = document.getElementById('nav-menu');
-      menu.classList.toggle('active');
-    }
-  </script>
-
 </body>
 </html>
