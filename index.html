@@ -1,210 +1,274 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Preliminary Examinations 2025</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Your Website Name</title>
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f7fa;
-    }
+    :root {
+  --oxford-blue: #002147;
+  --royal-blue: #4169e1;
+  --navbar-bg: var(--oxford-blue);
+  --sidebar-bg: #eaf1fb;
+  --card-bg: #e3edff;
+  --notif-bg: #fbe97f;
+  --notif-text: #ad8700;
+  --primary-text: #1b263b;
+}
 
-    header {
-      background-color: #0d2c54;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 20px;
-      flex-wrap: wrap;
-    }
+/* Reset */
+* { box-sizing: border-box; }
 
-    .logo-container {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f7f7f7;
+  margin: 0;
+  color: var(--primary-text);
+}
 
-    .logo-container img {
-      height: 40px;
-    }
+/* Header */
+.header {
+  background: linear-gradient(90deg, var(--oxford-blue), var(--royal-blue));
+  color: #fff;
+  padding: 20px 24px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+}
+.header h1 { margin: 0 0 4px 0; letter-spacing: 0.5px; font-weight: 600;}
+.header p  { margin: 0; font-size: 1.1em; opacity: 0.75;}
 
-    .logo-container span {
-      font-weight: bold;
-      font-size: 1.2rem;
-    }
+/* Navbar */
+.navbar {
+  background: var(--navbar-bg);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
 
-    nav {
-      display: flex;
-      gap: 15px;
-    }
+.navbar .nav-links {
+  display: flex;
+  flex: 1;
+}
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  padding: 16px 24px;
+  display: block;
+  transition: background 0.15s;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.navbar a:hover, .navbar a.active {
+  background: var(--royal-blue);
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-    }
+/* Hamburger menu for mobile */
+.navbar .menu-icon {
+  display: none;
+  font-size: 1.7em;
+  color: #fff;
+  padding: 16px;
+  cursor: pointer;
+}
 
-    nav a:hover {
-      text-decoration: underline;
-    }
+/* Main layout */
+.main {
+  display: flex;
+  margin: 24px;
+  min-height: 60vh;
+  gap: 24px;
+}
 
-    .marquee {
-      background-color: white;
-      border-top: 2px solid #002147;
-      border-bottom: 2px solid #002147;
-      padding: 8px 15px;
-      font-size: 16px;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-    }
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: var(--sidebar-bg);
+  padding: 20px 16px;
+  border-radius: 10px;
+  box-shadow: 0 1px 8px rgba(65,105,225,0.07);
+  min-width: 180px;
+}
+.sidebar b { font-size: 1.07em; }
+.sidebar ul { list-style: none; padding: 0; margin: 8px 0 0 0; }
+.sidebar li { margin: 0 0 8px 0; }
+.sidebar a {
+  color: var(--oxford-blue);
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.sidebar a:hover { color: var(--royal-blue); }
 
-    .marquee span {
-      color: red;
-      margin-right: 10px;
-    }
+/* Content */
+.content {
+  flex: 1;
+  background: #fff;
+  margin-left: 0;
+  padding: 28px 28px 24px 28px;
+  border-radius: 12px;
+  box-shadow: 0 2px 14px rgba(65,105,225,0.09);
+  min-width: 0;
+}
 
-    section {
-      padding: 2rem;
-    }
+/* Marquee (Latest News) */
+.notification {
+  background: var(--notif-bg);
+  color: var(--notif-text);
+  padding: 0;
+  border-radius: 6px;
+  margin-bottom: 18px;
+  font-weight: 600;
+  overflow: hidden;
+  height: 38px;
+  display: flex;
+  align-items: center;
+}
+.notification marquee {
+  font-size: 1.05em;
+  line-height: 38px;
+  width: 100%;
+}
 
-    h2 {
-      color: #0d2c54;
-    }
+/* Cards */
+.card {
+  background: var(--card-bg);
+  padding: 18px 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(65,105,225,0.07);
+}
+.card h2, .card h3 { margin: 0 0 15px 0;}
+.card ul { padding: 0 0 0 20px; margin: 0; }
 
-    .card {
-      background-color: #ffffff;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-      margin-bottom: 2rem;
-    }
+/* Footer */
+.footer {
+  background: linear-gradient(90deg, var(--oxford-blue), var(--royal-blue));
+  color: white;
+  text-align: center;
+  padding: 16px 0;
+  font-size: 1em;
+  margin-top: 32px;
+  letter-spacing: 0.4px;
+  border-radius: 0 0 10px 10px;
+}
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
+/* Responsive Design */
+@media (max-width: 950px) {
+  .main { flex-direction: column; gap: 0; margin: 16px 0; }
+  .sidebar { width: 100%; min-width: 0; border-radius: 10px 10px 0 0; }
+  .content { margin-left: 0; border-radius: 0 0 10px 10px; }
+}
 
-    th, td {
-      padding: 0.75rem;
-      border: 1px solid #ccc;
-    }
+@media (max-width: 700px) {
+  .header { padding: 14px 7vw; }
+  .main { margin: 7vw 0 0 0; }
+  .content, .sidebar { padding: 5vw; }
+}
+@media (max-width: 600px) {
+  .header, .content, .sidebar { padding-left: 4vw; padding-right: 4vw;}
+  .main { margin: 0; }
+  .sidebar { padding: 4vw 0; border-radius: 8px 8px 0 0;}
+}
 
-    th {
-      background-color: #00509e;
-      color: white;
-    }
-
-    a {
-      color: #0d2c54;
-      text-decoration: none;
-    }
-
-    a:hover {
-      color: #c10000;
-    }
-
-    footer {
-      background-color: #072f5f;
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav {
-        flex-direction: column;
-        width: 100%;
-        padding-top: 10px;
-      }
-
-      nav a {
-        padding: 8px 0;
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
-        width: 100%;
-      }
-    }
+/* Mobile Navbar - show hamburger, toggle vertical nav */
+@media (max-width: 900px) {
+  .navbar .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: var(--navbar-bg);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.14);
+  }
+  .navbar .nav-links.open { display: flex; }
+  .navbar .menu-icon {
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 0;
+    z-index: 110;
+  }
+  .navbar {
+    flex-direction: row;
+    position: relative;
+  }
+}
+}
   </style>
 </head>
+<script>
+function toggleMenu() {
+  var nav = document.querySelector('.navbar .nav-links');
+  nav.classList.toggle('open');
+}
+// Optional: close menu when link is clicked (for single-page/mobile UX)
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.nav-links a').forEach(function(link){
+    link.addEventListener('click', function(){
+      if(window.innerWidth < 900) {
+        document.querySelector('.navbar .nav-links').classList.remove('open');
+      }
+    });
+  });
+});
+</script>
+
 <body>
-
-  <header>
-    <div class="logo-container">
-      <img src="logo_p.png" alt="Logo" />
-      <span>Preliminary Examinations 2025</span>
-    </div>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Test</a>
-      <a href="#">Register</a>
-      <a href="#">Results</a>
-    </nav>
-  </header>
-
-  <div class="marquee">
-    <span>Important:</span>
-    <marquee scrollamount="5">Mid-Sem Exams begin from 5th Sept | New Books available in the Digital Library | Check E-Library section for updates</marquee>
+  <div class="header">
+    <h1>Your Portal Name</h1>
+    <p>Empowering education with technology</p>
   </div>
+ <div class="navbar">
+  <div class="nav-links">
+    <a href="#">Home</a>
+    <a href="#">About Us</a>
+    <a href="#">Candidates</a>
+    <a href="#">Institutes</a>
+    <a href="#">Downloads</a>
+    <a href="#">Contact</a>
+  </div>
+  <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
+</div>
 
-  <section>
-    <h2>About This Website</h2>
-    <div class="card">
-      <p>This portal is designed to streamline the examination process for Preliminary Examinations 2025. It features an online registration system, test management interface, result publication, official notices, and access to the e-library resources.</p>
-    </div>
-  </section>
-
-  <section>
-    <h2>Official Notices</h2>
-    <div class="card">
-      <table>
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Notice</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>2025-07-25</td>
-            <td>Mid-Sem Exams begin from 5th Sept 2025</td>
-          </tr>
-          <tr>
-            <td>2025-07-20</td>
-            <td>New books added to the e-library portal</td>
-          </tr>
-          <tr>
-            <td>2025-07-15</td>
-            <td>Registration opens for Preliminary Examinations 2025</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section>
-    <h2>E-Library</h2>
-    <div class="card">
+  <div class="main">
+    <div class="sidebar">
+      <div><b>Quick Links</b></div>
       <ul>
-        <li><a href="#">Download Engineering Math I</a></li>
-        <li><a href="#">View Digital Logic Notes</a></li>
-        <li><a href="#">Access Programming Fundamentals</a></li>
+        <li><a href="#">Application Form</a></li>
+        <li><a href="#">Admit Card</a></li>
+        <li><a href="#">Results</a></li>
+        <li><a href="#">Helpdesk</a></li>
+      </ul>
+      <br/>
+      <div><b>Downloads</b></div>
+      <ul>
+        <li><a href="#">Brochure</a></li>
+        <li><a href="#">Syllabus</a></li>
       </ul>
     </div>
-  </section>
+    <div class="content">
+      <div class="notification">
+  <marquee behavior="scroll" direction="left" scrollamount="6">
+    Latest update: Applications for 2024-25 are now open!
+  </marquee>
+</div>
 
-  <footer>
-    <p>&copy; 2025 Preliminary Examinations. All Rights Reserved.</p>
-  </footer>
-
+      <div class="card">
+        <h2>Welcome to Your Portal</h2>
+        <p>This is a sample education portal interface inspired by government websites. Please edit this text as per your requirements.</p>
+      </div>
+      <div class="card">
+        <h3>Important Information</h3>
+        <ul>
+          <li>Registration closes: 30 July 2025</li>
+          <li>Exam date: 15 August 2025</li>
+          <li>Results announcement: 5 September 2025</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    &copy; 2025 Your Portal Name | For demo/educational use only.
+  </div>
 </body>
 </html>
