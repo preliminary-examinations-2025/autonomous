@@ -16,6 +16,61 @@
 
 /* Reset */
 * { box-sizing: border-box; }
+/* Enhanced Sidebar styles */
+.sidebar {
+  width: 220px;
+  background: var(--sidebar-bg);
+  padding: 20px 18px;
+  border-radius: 10px;
+  box-shadow: 0 1px 10px rgba(65,105,225,0.10);
+  font-size: 1.08em;
+  position: relative;
+  transition: all 0.3s cubic-bezier(.4,0,.2,1);
+}
+.sidebar b {
+  font-size: 1.11em;
+  color: var(--oxford-blue);
+  letter-spacing: 0.02em;
+}
+.sidebar ul {
+  list-style: none;
+  padding: 4px 0 0 0;
+  margin: 0;
+}
+.sidebar li {
+  margin: 12px 0;
+}
+.sidebar a {
+  color: var(--oxford-blue);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 4px 6px;
+  display: inline-block;
+  border-radius: 3px;
+  transition: background 0.12s, color 0.12s;
+}
+.sidebar a:hover {
+  background: var(--royal-blue);
+  color: #fff;
+}
+
+/* Responsive: show/hide sidebar */
+@media (max-width: 950px) {
+  .main { flex-direction: column; }
+  .sidebar {
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 1px 6px rgba(65,105,225,0.13);
+  }
+  .content { border-radius: 0 0 10px 10px; }
+}
+@media (max-width: 600px) {
+  .sidebar {
+    padding: 3vw 3vw 0 3vw;
+    font-size: 1em;
+  }
+}
 
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
@@ -125,6 +180,22 @@ body {
   line-height: 38px;
   width: 100%;
 }
+.sidebar-toggle {
+  display: none;
+  background: var(--royal-blue);
+  color: #fff;
+  border: none;
+  font-size: 1.3em;
+  padding: 9px 16px;
+  border-radius: 7px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+@media (max-width: 700px) {
+  .sidebar-toggle { display: block; }
+  .sidebar { display: none; z-index: 21;}
+  .sidebar.open { display: block; }
+}
 
 /* Cards */
 .card {
@@ -231,21 +302,29 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 
   <div class="main">
-    <div class="sidebar">
-      <div><b>Quick Links</b></div>
-      <ul>
-        <li><a href="#">Application Form</a></li>
-        <li><a href="#">Admit Card</a></li>
-        <li><a href="#">Results</a></li>
-        <li><a href="#">Helpdesk</a></li>
-      </ul>
-      <br/>
-      <div><b>Downloads</b></div>
-      <ul>
-        <li><a href="#">Brochure</a></li>
-        <li><a href="#">Syllabus</a></li>
-      </ul>
-    </div>
+<button id="sidebarToggle" class="sidebar-toggle" onclick="toggleSidebar()" style="display:none;">
+  &#9776; Menu
+</button>
+
+  <aside class="sidebar" id="sidebar">
+    <div><b>Quick Links</b></div>
+    <ul>
+      <li><a href="#">Application Form</a></li>
+      <li><a href="#">Admit Card</a></li>
+      <li><a href="#">Results</a></li>
+      <li><a href="#">Helpdesk</a></li>
+    </ul>
+    <div style="margin:18px 0 0 0;"><b>Downloads</b></div>
+    <ul>
+      <li><a href="#">Brochure</a></li>
+      <li><a href="#">Syllabus</a></li>
+    </ul>
+  </aside>
+  <section class="content">
+    <!-- notification marquee, cards, and other content go here, unchanged -->
+  </section>
+</div>
+
     <div class="content">
       <div class="notification">
   <marquee behavior="scroll" direction="left" scrollamount="6">
@@ -270,5 +349,29 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="footer">
     &copy; 2025 Your Portal Name | For demo/educational use only.
   </div>
+<script>
+function toggleMenu() {
+  var nav = document.querySelector('.navbar .nav-links');
+  nav.classList.toggle('open');
+}
+function toggleSidebar() {
+  var sidebar = document.getElementById('sidebar');
+  sidebar.classList.toggle('open');
+}
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.nav-links a').forEach(function(link){
+    link.addEventListener('click', function(){
+      if(window.innerWidth < 900) {
+        document.querySelector('.navbar .nav-links').classList.remove('open');
+      }
+    });
+  });
+  // Hide sidebar by default on very small screens (optional, UX)
+  if(window.innerWidth < 700) {
+    document.getElementById('sidebar').classList.remove('open');
+  }
+});
+</script>
+
 </body>
 </html>
